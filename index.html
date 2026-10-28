@@ -248,6 +248,123 @@ body>.wrap>.stats .stat span{font-size:12px;letter-spacing:.2px}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+/* PabAce Classic Premium v2 — unified palette, clear navigation, app-like spacing */
+:root{
+ --bg:#0b1220;--panel:#121d30;--panel2:#192840;--ink:#f8f5ec;--muted:#b9c4d4;
+ --pink:#d9b56d;--yellow:#f0d69a;--mint:#9ad8c2;--purple:#c5b17d;--red:#f09a9a;
+ color-scheme:dark;
+}
+html{background:var(--bg)}
+body{
+ color:var(--ink);
+ background:radial-gradient(ellipse at 50% -15%,#273952 0,transparent 45%),linear-gradient(180deg,#0b1220 0%,#0c1422 60%,#0a111d 100%);
+ background-attachment:fixed;
+}
+.wrap{max-width:1180px;padding:22px clamp(14px,3vw,34px) 30px}
+.top{
+ border:1px solid #d9b56d30;background:#101a2beF;border-radius:20px;
+ box-shadow:0 14px 40px #02071155;padding:13px 16px;
+}
+.logo{background:linear-gradient(145deg,#f0d69a,#b88b43);color:#172033;box-shadow:0 8px 24px #d9b56d25}
+.eyebrow{color:#e4c47f;letter-spacing:1.8px}
+.pill{background:#ffffff08;border-color:#d9b56d25;color:#c5cede}
+.app-nav{
+ position:sticky;top:12px;z-index:30;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:7px;max-width:660px;margin:18px auto 26px;padding:7px;
+ border:1px solid #d9b56d35;border-radius:18px;background:#101a2bed;
+ box-shadow:0 12px 32px #02071150;backdrop-filter:blur(16px);
+}
+.app-nav button{color:#aebbd0;border-radius:12px;min-height:48px;transition:background .18s,color .18s,transform .18s}
+.app-nav button:hover{color:#fff3d1;background:#ffffff09}
+.app-nav button.active{color:#1a2230;background:linear-gradient(135deg,#f0d69a,#c39a54);border-color:#f7dfaa;box-shadow:0 5px 18px #d9b56d24}
+.app-nav button .nav-icon{font-size:20px}
+.hero{
+ border-color:#d9b56d35;
+ background:linear-gradient(120deg,#17243aF5 0%,#142035F5 58%,#1c2d3eF5 100%);
+ box-shadow:0 22px 60px #02071155;
+}
+.hero:before{background:#d9b56d1c}.hero:after{background:#9ad8c21a}
+.hero h2{color:#fbf7ed}
+.grad{background:linear-gradient(90deg,#f2dca8,#c7a15c);background-clip:text}
+.hero p{color:#c0cad8}
+.mascot{background:linear-gradient(145deg,#ffffff0b,#ffffff03);border-color:#d9b56d2b}
+body>.wrap>.stats .stat,.stat,.panel{
+ background:linear-gradient(145deg,#17243a,#111c2e);border-color:#d9b56d24;
+ box-shadow:0 10px 28px #02071122;
+}
+body>.wrap>.stats .stat strong,.stat strong{color:#f0d69a}
+#studyDashboard{background:linear-gradient(145deg,#17243a,#101b2d)!important;border-color:#d9b56d35}
+#studyDashboard:before{background:linear-gradient(90deg,#f0d69a,#9ad8c2,#f0d69a)}
+#studyDashboard>.stats .stat{background:#ffffff06;border-color:#d9b56d20}
+#modes>.eyebrow:after{background:linear-gradient(90deg,#d9b56d55,transparent)}
+.mode{
+ background:linear-gradient(150deg,#17243a,#111c2e);border-color:#d9b56d25;
+ box-shadow:0 10px 26px #02071125;
+}
+.mode:before{background:#d9b56d10}
+.mode:hover{background:linear-gradient(150deg,#20314a,#142239);border-color:#e0bd76a0;box-shadow:0 18px 36px #02071150}
+.mode .emoji{background:#d9b56d12;border-color:#d9b56d35}
+.mode>div:last-child{color:#e8ca86!important}
+.primary{background:linear-gradient(110deg,#f0d69a,#c49a53);color:#172033;box-shadow:0 6px 18px #d9b56d20}
+.secondary{background:#ffffff08;border-color:#d9b56d35;color:#f3efe5}
+.primary:hover,.secondary:hover{filter:brightness(1.08)}
+#topicPractice{background:linear-gradient(145deg,#17243a,#111c2e)!important;border-color:#d9b56d28!important}
+#topicButtons button{background:#ffffff08!important;border:1px solid #d9b56d35!important;color:#f1e8d2!important}
+.game,.adventure,#flashcardLab,#result{background:linear-gradient(145deg,#17243a,#101b2d);border:1px solid #d9b56d30}
+.answer{background:linear-gradient(145deg,#1d2c43,#17243a);border-color:#ffffff18}
+.answer:hover:not(:disabled){border-color:#d9b56d;background:#24344b}
+.letter{color:#f0d69a;background:#d9b56d15}
+.answer.correct{border-color:#9ad8c2;background:#173c38}.answer.wrong{border-color:#f09a9a;background:#482b35}
+.learning-panel{background:linear-gradient(145deg,#172a39,#132333);border-color:#9ad8c255}
+.learning-panel h3,.source-link{color:#a9e1cd}
+.topic-pill{color:#f0d69a;border-color:#d9b56d35;background:#d9b56d0c}
+.track{background:#ffffff12}.bar{background:linear-gradient(90deg,#9ad8c2,#f0d69a)}
+#world{background:#101c2e;border-color:#d9b56d35}
+.game-control{background:#23344a;border-color:#d9b56d35}
+.game-control.jump{background:linear-gradient(120deg,#f0d69a,#c49a53);color:#172033}
+.quest-box{background:#17243a;border-color:#d9b56d55}
+.quest-option{background:#101b2d;border-color:#ffffff1c}
+.quest-option:hover{border-color:#d9b56d}
+.feedback.good{background:#173c38;border-color:#9ad8c277}.feedback.bad{background:#482b35;border-color:#f09a9a77}
+.reviewitem{border-color:#ffffff18}.reviewitem b{color:#f0d69a}
+.footer{border-color:#d9b56d20;color:#8f9db2}
+button:focus-visible,.mode:focus-visible,.answer:focus-visible{outline-color:#f0d69a}
+@media(max-width:700px){
+ body{padding-bottom:96px}
+ .wrap{padding:12px 12px 22px}
+ .top{gap:10px;padding:12px}
+ .top>div:last-child{justify-content:flex-start!important;width:100%}
+ .top .pill{width:auto;flex:1;text-align:left}
+ .app-nav{
+  position:fixed;top:auto;bottom:max(10px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);
+  width:calc(100% - 22px);max-width:480px;margin:0;padding:7px;gap:5px;
+  background:#101a2bf5;border-color:#d9b56d55;box-shadow:0 12px 36px #0009;
+ }
+ .app-nav button{min-height:54px;padding:7px 4px;font-size:11px;gap:3px}
+ .app-nav button .nav-icon{font-size:19px}
+ .hero{margin:12px 0;padding:24px 19px;border-radius:23px}
+ .hero h2{font-size:clamp(33px,8.5vw,46px);letter-spacing:-1.2px}
+ .mascot{display:flex;min-height:0;padding:12px 14px;border-radius:16px}
+ .face{font-size:39px}
+ body>.wrap>.stats .stat{background:linear-gradient(145deg,#17243a,#111c2e)}
+ .modes{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .mode{min-height:190px;padding:14px;border-radius:17px}
+ .mode .emoji{width:42px;height:42px;font-size:23px}
+ .mode h3{font-size:16px;margin:12px 0 6px}
+ .mode p{font-size:12px;line-height:1.55}
+ .mode>div:last-child{font-size:10px;letter-spacing:.2px}
+ #studyDashboard{padding:16px!important}
+}
+@media(max-width:420px){
+ .top .pill{font-size:11px;padding:8px}
+ .app-nav button{font-size:10px}
+ .app-nav button .nav-icon{font-size:18px}
+ .modes{grid-template-columns:1fr}
+ .mode{min-height:0}
+ .mode p{font-size:13px}
+}
+
 </style></head><body><main class="wrap">
 <header class="top"><div class="brand"><div class="logo">🎮</div><div><div class="eyebrow">STUDY • PLAY • LEVEL UP</div><h1>PabAce</h1></div></div><div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end"><div class="pill">📚 Public Administration · NET Prep</div><button class="secondary" id="installAppBtn" type="button" onclick="installPabAce()" style="padding:9px 12px;font-size:13px">⬇ Install App</button></div></header>
 <nav class="app-nav" id="appNav" aria-label="Main app sections">
@@ -256,7 +373,7 @@ body>.wrap>.stats .stat span{font-size:12px;letter-spacing:.2px}
 <button type="button" data-view="learn" onclick="showAppView('learn')"><span class="nav-icon">📚</span><span>Learn</span></button>
 <button type="button" data-view="progress" onclick="showAppView('progress')"><span class="nav-icon">📈</span><span>Progress</span></button>
 </nav>
-<section class="hero app-view app-view-home active-view" id="home"><div><div class="eyebrow">YOUR SYLLABUS, BUT MAKE IT FUN</div><h2>Ready to become a<br><span class="grad">Quiz Legend?</span></h2><p>Battle your way through Public Administration questions. Collect XP, build streaks, use hints, and learn from every wrong answer. No boring revision zone here. 😎</p><button class="primary" onclick="document.getElementById('modes').scrollIntoView({behavior:'smooth'})">Choose your game ↓</button></div><aside class="mascot"><div class="face" id="heroFace">🤓</div><h3 id="heroLine">The Admin Guru</h3><p id="heroSub">I know the answer. Do YOU?</p></aside></section>
+<section class="hero app-view app-view-home active-view" id="home"><div><div class="eyebrow">YOUR SYLLABUS, BUT MAKE IT FUN</div><h2>Ready to become a<br><span class="grad">Quiz Legend?</span></h2><p>Battle your way through Public Administration questions. Collect XP, build streaks, use hints, and learn from every wrong answer. No boring revision zone here. 😎</p><button class="primary" onclick="showAppView(\'play\')">Choose your game ↓</button></div><aside class="mascot"><div class="face" id="heroFace">🤓</div><h3 id="heroLine">The Admin Guru</h3><p id="heroSub">I know the answer. Do YOU?</p></aside></section>
 <section class="stats app-view app-view-home active-view"><div class="stat"><strong id="xp">0</strong><span>⚡ Total XP</span></div><div class="stat"><strong id="best">0</strong><span>🏆 Best streak</span></div><div class="stat"><strong id="played">0</strong><span>✅ Questions answered</span></div></section>
 <section class="panel app-view app-view-progress" id="studyDashboard" style="margin:14px 0 22px">
  <div class="eyebrow">📈 YOUR STUDY HQ</div><h2 style="margin:7px 0 4px">Progress that helps you improve</h2>
