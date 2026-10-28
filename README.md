@@ -16,6 +16,13 @@ A playful, mobile-friendly UGC NET Public Administration study game built with p
 ## Source and answer-key policy
 The original question bank is kept in `questions.js` and has not been rewritten by the supplementary-question update. New questions and learning notes are in `learning.js`. Supplementary factual items link to official constitutional, government or statutory sources where available. Original answer keys are reproduced as supplied and should be reviewed separately if a possible source error is found.
 
+## Install PabAce on your phone
+- Open the live site in your browser: https://thizforyou-cyber.github.io/PubAdmin-Game-Arena/
+- Tap **Install App** in the top bar when your browser offers installation.
+- On iPhone/iPad, open the site in Safari, tap **Share**, then choose **Add to Home Screen**.
+- The app shell and question/learning files are cached for offline opening after the first successful load. Some browser features and links may still need an internet connection.
+- Study progress remains saved in that browser on that device; installing the app does not automatically sync progress between devices.
+
 ## Publish with GitHub Pages
 1. Open this repository on GitHub.
 2. Select **Settings** → **Pages**.
@@ -33,6 +40,9 @@ The original question bank is kept in `questions.js` and has not been rewritten 
 
 ## Files
 - `index.html` — interface, layout, game modes and learning tools
+- `manifest.json` — installable app metadata
+- `service-worker.js` — offline app-shell caching
+- `icon.svg` — PabAce app icon
 - `questions.js` — original supplied question bank
 - `learning.js` — learning notes and 20 supplementary questions with references
 - `.nojekyll` — GitHub Pages configuration
