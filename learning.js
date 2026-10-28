@@ -37,11 +37,11 @@ window.LEARNING_NOTES = {
     source: "https://cabsec.gov.in/"
   },
   59: {
-    topic: "Administrative Thinkers",
-    why: "Luther Gulick is closely associated with the classical study of public administration and the POSDCORB formulation (Planning, Organizing, Staffing, Directing, Coordinating, Reporting and Budgeting).",
-    memory: "POSDCORB is Gulick's famous administrative mnemonic.",
-    exam: "POSDCORB describes major functions of an executive; it is not a complete theory of every aspect of public administration.",
-    source: "https://archive.org/search?query=Luther+Gulick+Papers+on+the+Science+of+Administration"
+    topic: "Administrative Thought",
+    why: "The correct answer is Dwight Waldo. This question attributes the view that public administration as a field and practice dates back to the earliest times of human civilisation to Waldo.",
+    memory: "Q59: earliest origins of public administration → Dwight Waldo. Do not confuse this quote with Gulick's POSDCORB.",
+    exam: "Choose option C (the third option): Dwight Waldo.",
+    source: "https://testbook.com/question-answer/who-of-the-following-thinkers-define-public-admin--6a84148d1f0d7a4b63d21aa6/amp"
   }
 };
 
