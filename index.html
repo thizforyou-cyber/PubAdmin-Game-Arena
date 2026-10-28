@@ -83,8 +83,9 @@ function showLearning(q,correct){
  const topic=note.topic||q.topic||'Public Administration',saved=getRevisionIds().includes(q.n);
  const answerLabel=String.fromCharCode(65+q.a)+'. '+(q.o[q.a]||('Option '+(q.a+1)));
  const explanation=note.why?'<p>'+escapeHTML(note.why)+'</p>':'';
- const memory=note.memory?'<p class="answer-memory"><b>Remember:</b> '+escapeHTML(note.memory)+'</p>':'';
- panel.innerHTML='<div class="learning-label">ANSWER</div><div class="topic-pill">'+escapeHTML(topic)+'</div><h3>'+(correct===true?'Correct!':correct===false?'Correct answer':'Answer & explanation')+'</h3><p class="correct-answer"><b>'+escapeHTML(answerLabel)+'</b></p>'+explanation+memory+buildOptionReview(q)+(note.source?'<p class="answer-source"><a class="source-link" href="'+escapeHTML(note.source)+'" target="_blank" rel="noopener noreferrer">Read reference</a></p>':'')+'<div class="learning-actions"><button class="secondary" onclick="toggleRevision('+Number(q.n)+')">'+(saved?'✓ Saved for revision — remove':'🔖 Save for revision')+'</button></div>';
+ const memory=note.memory?'<p class="answer-memory"><b>🧠 Remember:</b> '+escapeHTML(note.memory)+'</p>':'';
+ const exam=note.exam?'<div style="margin:12px 0;padding:12px 14px;border:1px solid #665b91;border-radius:12px;background:#241e3b"><b style="color:var(--yellow)">🎯 UGC NET exam tip</b><p style="margin:7px 0 0">'+escapeHTML(note.exam)+'</p></div>':'';
+ panel.innerHTML='<div class="learning-label">ANSWER</div><div class="topic-pill">'+escapeHTML(topic)+'</div><h3>'+(correct===true?'Correct!':correct===false?'Correct answer':'Answer & explanation')+'</h3><p class="correct-answer"><b>'+escapeHTML(answerLabel)+'</b></p>'+explanation+memory+exam+buildOptionReview(q)+(note.source?'<p class="answer-source"><a class="source-link" href="'+escapeHTML(note.source)+'" target="_blank" rel="noopener noreferrer">Read reference</a></p>':'')+'<div class="learning-actions"><button class="secondary" onclick="toggleRevision('+Number(q.n)+')">'+(saved?'✓ Saved for revision — remove':'🔖 Save for revision')+'</button></div>';
  panel.classList.remove('hide');
 }
 
