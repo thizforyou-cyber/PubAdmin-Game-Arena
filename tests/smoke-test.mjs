@@ -28,7 +28,7 @@ for (const item of questions) {
   assert.ok(item.o.every((option) => typeof option === "string" && option.trim()), `Q${item.n} has an empty option`);
 }
 
-const learningContext = { window: {} };
+const learningContext = { window: { QBANK: questions } };
 vm.runInNewContext(learningSource, learningContext, { filename: "learning.js" });
 const notes = learningContext.window.LEARNING_NOTES ?? {};
 for (const key of Object.keys(notes)) {
