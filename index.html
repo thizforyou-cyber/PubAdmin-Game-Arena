@@ -98,6 +98,147 @@ button{ -webkit-tap-highlight-color:transparent}
  .move-controls{gap:6px}
  .game-control{min-width:44px;min-height:46px}
 }
+
+/* Visual refresh: premium study dashboard and clearer page hierarchy */
+body{
+ background:
+  radial-gradient(ellipse at 8% 0%,#4a2860 0,transparent 34%),
+  radial-gradient(ellipse at 100% 22%,#1b4160 0,transparent 28%),
+  linear-gradient(180deg,#100d20 0%,#0c1020 100%);
+ background-attachment:fixed;
+}
+.wrap{max-width:1240px;padding:24px clamp(14px,3vw,34px) 20px}
+.top{
+ position:relative;padding:13px 16px;border:1px solid #ffffff18;border-radius:20px;
+ background:#151329c9;backdrop-filter:blur(14px);box-shadow:0 12px 35px #05030d35;
+}
+.logo{width:48px;height:48px;display:grid;place-items:center;padding:0;border-radius:15px}
+.brand h1{font-size:clamp(20px,2.3vw,27px);letter-spacing:-.7px}
+.top>.pill{background:#ffffff09;border-color:#ffffff18}
+.hero{
+ position:relative;isolation:isolate;overflow:hidden;margin:20px 0 16px;padding:clamp(24px,4vw,48px);
+ grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:30px;
+ border:1px solid #c2aaff26;border-radius:30px;
+ background:linear-gradient(120deg,#211833f2 0%,#1b1b36ed 56%,#182d43e8 100%);
+ box-shadow:0 24px 65px #05030d45;
+}
+.hero:before{content:"";position:absolute;z-index:-1;width:300px;height:300px;right:20%;top:-220px;border-radius:50%;background:#ff6db426;filter:blur(6px)}
+.hero:after{content:"";position:absolute;z-index:-1;width:240px;height:240px;right:-120px;bottom:-160px;border-radius:50%;background:#7af0c51a;filter:blur(8px)}
+.hero .eyebrow{font-size:11px}
+.hero h2{font-size:clamp(36px,5.2vw,62px);max-width:12ch;letter-spacing:-2px;line-height:1.01;margin:15px 0}
+.hero p{font-size:clamp(14px,1.2vw,16px);max-width:54ch;line-height:1.8}
+.hero .primary{margin-top:8px;box-shadow:0 8px 22px #ff6db426;transition:transform .2s,box-shadow .2s}
+.hero .primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px #ff6db43b}
+.mascot{
+ position:relative;min-height:250px;padding:26px;border-radius:24px;
+ border:1px solid #ffffff20;
+ background:linear-gradient(145deg,#ffffff0e,#ffffff04);
+ box-shadow:inset 0 1px #ffffff0a;
+}
+.face{font-size:clamp(68px,8vw,96px);line-height:1.2}
+.mascot h3{font-size:21px;margin:14px 0 5px}
+.mascot p{max-width:24ch;font-size:13px}
+body>.wrap>.stats{
+ gap:14px;margin:18px 0 24px;
+}
+body>.wrap>.stats .stat{
+ position:relative;overflow:hidden;min-height:102px;padding:20px 22px;
+ border-radius:20px;border:1px solid #ffffff17;
+ background:linear-gradient(145deg,#211b39ed,#17152ce8);
+ box-shadow:0 12px 30px #05030d20;
+}
+body>.wrap>.stats .stat:after{content:"";position:absolute;width:76px;height:76px;right:-32px;bottom:-42px;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 12px #ffffff04,0 0 0 24px #ffffff03}
+body>.wrap>.stats .stat strong{font-size:clamp(25px,3vw,34px);letter-spacing:-1px}
+body>.wrap>.stats .stat span{font-size:12px;letter-spacing:.2px}
+#studyDashboard{
+ position:relative;overflow:hidden;border-radius:26px!important;
+ border:1px solid #a99bff2e;background:linear-gradient(145deg,#1d1934f5,#15172bf5)!important;
+ box-shadow:0 18px 45px #05030d2b;
+}
+#studyDashboard:before{content:"";position:absolute;top:0;left:24px;right:24px;height:2px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--mint));opacity:.8}
+#studyDashboard>.eyebrow{margin-top:3px}
+#studyDashboard h2{font-size:clamp(22px,2.5vw,29px);letter-spacing:-.6px}
+#studyDashboard>.stats .stat{border-radius:16px;background:#ffffff07;border-color:#ffffff12}
+#studyDashboard>.stats .stat strong{font-size:clamp(22px,2.5vw,29px)}
+#modes{margin-top:30px}
+#modes>.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:15px}
+#modes>.eyebrow:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,#ffffff25,transparent)}
+.modes{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:25px}
+.mode{
+ position:relative;isolation:isolate;overflow:hidden;min-height:220px;
+ border-radius:22px;border:1px solid #ffffff17;
+ background:linear-gradient(150deg,#211b39,#17152b);
+ padding:22px;box-shadow:0 12px 28px #05030d20;
+ transition:transform .22s,border-color .22s,box-shadow .22s,background .22s;
+}
+.mode:before{content:"";position:absolute;z-index:-1;width:140px;height:140px;right:-65px;top:-72px;border-radius:50%;background:#a99bff0c;transition:background .2s,transform .2s}
+.mode:hover{transform:translateY(-5px);border-color:#a99bff70;box-shadow:0 18px 36px #05030d45;background:linear-gradient(150deg,#292044,#1a1931)}
+.mode:hover:before{background:#ff6db41a;transform:scale(1.25)}
+.mode .emoji{width:52px;height:52px;display:grid;place-items:center;border:1px solid #ffffff18;border-radius:16px;background:#ffffff0a;font-size:27px}
+.mode h3{font-size:19px;margin:17px 0 8px;letter-spacing:-.3px}
+.mode p{font-size:13px;line-height:1.7;color:#c7bfdc}
+.mode>div:last-child{font-size:12px;letter-spacing:.55px}
+#topicPractice{border-radius:24px!important;border-color:#ffffff19!important;background:linear-gradient(145deg,#1d1934,#17152b)!important;box-shadow:0 14px 34px #05030d24}
+#topicPractice h3{font-size:21px;letter-spacing:-.4px}
+#topicButtons button{border-radius:999px!important;padding:10px 15px!important;transition:transform .15s,border-color .15s}
+#topicButtons button:hover{transform:translateY(-2px)}
+#flashcardLab,#game,#result{border-radius:24px;border-color:#ffffff1b;box-shadow:0 18px 45px #05030d35}
+#adventure{border-radius:24px;box-shadow:0 18px 45px #05030d35}
+#world{max-height:440px}
+.primary,.secondary{transition:transform .16s,filter .16s}
+.primary:hover,.secondary:hover{filter:brightness(1.08)}
+.primary:active,.secondary:active{transform:scale(.98)}
+.track{height:8px;background:#ffffff0d}
+.bar{border-radius:20px}
+.answer{border-radius:16px;background:linear-gradient(145deg,#2a2445,#25203d);transition:transform .15s,border-color .15s,background .15s}
+.answer:hover:not(:disabled){transform:translateY(-2px)}
+.learning-panel{border-radius:20px}
+.footer{margin-top:30px;border-top:1px solid #ffffff12;padding:25px 10px 8px}
+@media(max-width:900px){
+ .wrap{padding:16px}
+ .hero{padding:28px;gap:18px}
+ .modes{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mode{min-height:205px}
+}
+@media(max-width:700px){
+ .wrap{padding:12px}
+ .top{padding:12px;border-radius:16px}
+ .hero{margin:14px 0;padding:24px 20px;border-radius:24px;grid-template-columns:minmax(0,1fr)}
+ .hero h2{font-size:clamp(35px,9vw,48px);letter-spacing:-1.3px}
+ .mascot{display:flex;min-height:0;flex-direction:row;align-items:center;justify-content:flex-start;gap:14px;padding:14px 16px;border-radius:18px;text-align:left}
+ .face{font-size:48px;filter:none}
+ .mascot h3{font-size:16px;margin:0 0 4px}
+ .mascot p{margin:0;font-size:12px}
+ body>.wrap>.stats{gap:8px;margin:12px 0 18px}
+ body>.wrap>.stats .stat{min-height:82px;padding:13px 10px;border-radius:15px}
+ body>.wrap>.stats .stat strong{font-size:clamp(21px,6vw,27px)}
+ #studyDashboard{border-radius:20px!important}
+ #studyDashboard>.stats{gap:7px}
+ #studyDashboard>.stats .stat{min-height:76px;padding:10px 7px}
+ .modes{grid-template-columns:minmax(0,1fr);gap:11px}
+ .mode{min-height:0;padding:17px;border-radius:18px}
+ .mode .emoji{width:44px;height:44px;border-radius:13px}
+ .mode h3{margin:12px 0 6px}
+ .mode p{margin-bottom:0}
+ #topicPractice{border-radius:20px!important}
+}
+@media(max-width:420px){
+ .wrap{padding:9px}
+ .brand h1{font-size:19px}
+ .logo{width:42px;height:42px}
+ .hero{padding:20px 15px}
+ .hero h2{font-size:34px}
+ .hero .primary{width:100%}
+ body>.wrap>.stats .stat{padding:11px 7px}
+ body>.wrap>.stats .stat span{font-size:10px}
+ #studyDashboard{padding:15px!important}
+ #studyDashboard>.stats .stat span{font-size:10px}
+ .mascot{gap:10px}
+ .face{font-size:42px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
 </style></head><body><main class="wrap">
 <header class="top"><div class="brand"><div class="logo">🎮</div><div><div class="eyebrow">STUDY • PLAY • LEVEL UP</div><h1>PubAdmin Game Arena</h1></div></div><div class="pill">📚 Public Administration · NET Prep</div></header>
 <section class="hero" id="home"><div><div class="eyebrow">YOUR SYLLABUS, BUT MAKE IT FUN</div><h2>Ready to become a<br><span class="grad">Quiz Legend?</span></h2><p>Battle your way through Public Administration questions. Collect XP, build streaks, use hints, and learn from every wrong answer. No boring revision zone here. 😎</p><button class="primary" onclick="document.getElementById('modes').scrollIntoView({behavior:'smooth'})">Choose your game ↓</button></div><aside class="mascot"><div class="face" id="heroFace">🤓</div><h3 id="heroLine">The Admin Guru</h3><p id="heroSub">I know the answer. Do YOU?</p></aside></section>
