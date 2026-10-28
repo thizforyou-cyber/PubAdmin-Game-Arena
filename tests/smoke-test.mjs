@@ -35,6 +35,12 @@ for (const key of Object.keys(notes)) {
   assert.ok(numbers.includes(Number(key)), `Learning note ${key} has no matching question`);
 }
 
+for (const [key, note] of Object.entries(notes)) {
+  const question = questions.find((item) => item.n === Number(key));
+  if (question && !question.topic) question.topic = note.topic;
+}
+assert.ok(questions.every((item) => typeof item.topic === "string" && item.topic.trim()), "Every question should be available for topic practice");
+
 const inlineScripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
   .filter((match) => !/\bsrc=/.test(match[1]))
   .map((match) => match[2]);
