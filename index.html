@@ -254,7 +254,9 @@ body>.wrap>.stats .stat span{font-size:12px;letter-spacing:.2px}
  <div id="topicProgressList" style="display:grid;gap:10px"></div>
  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
   <button class="primary" onclick="startReview()">🔁 Review saved questions</button>
-  <button class="secondary" onclick="exportStudyProgress()">⬇️ Export my progress</button>
+  <button class="secondary" onclick="exportStudyProgress()">⬇️ Export progress</button>
+  <button class="secondary" onclick="document.getElementById('progressImportFile').click()">⬆️ Import backup</button>
+  <input id="progressImportFile" type="file" accept="application/json,.json" class="hide" onchange="importStudyProgress(this)">
  </div>
  <p class="tiny" id="progressPrivacy" style="margin-bottom:0">Progress stays in this browser unless you export it. It does not automatically sync between devices.</p>
 </section>
@@ -305,7 +307,29 @@ function renderStudyDashboard(){
 }
 function exportStudyProgress(){
  const data={app:'PabAce',exportedAt:new Date().toISOString(),history:safeRead('history',[]),schedule:safeRead('schedule',{}),revision:getRevisionIds(),xp:stat('xp'),bestStreak:stat('best'),questionsAnswered:stat('played')};
- const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='pubadmin-study-progress.json';a.click();URL.revokeObjectURL(url)
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='pabace-study-progress.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
+}
+function importStudyProgress(input){
+ const file=input.files&&input.files[0];if(!file)return;
+ const reader=new FileReader();
+ reader.onload=()=>{
+  try{
+   const data=JSON.parse(String(reader.result||''));
+   if(!data||!Array.isArray(data.history)||!data.schedule||typeof data.schedule!=='object'||!Array.isArray(data.revision))throw new Error('This file does not look like a PabAce progress backup.');
+   const history=data.history.filter(x=>x&&Number.isFinite(Number(x.n))&&typeof x.correct==='boolean').slice(-5000);
+   const validIds=new Set((window.QBANK||[]).map(q=>Number(q.n)));
+   const revision=[...new Set(data.revision.map(Number).filter(n=>validIds.has(n)))];
+   const schedule={};
+   Object.entries(data.schedule).forEach(([key,value])=>{const n=Number(key);if(validIds.has(n)&&value&&typeof value==='object')schedule[n]=value});
+   if(!confirm('Import '+history.length+' study attempts and '+revision.length+' saved revision questions? This replaces the progress currently stored in this browser. Export your current progress first if you want to keep a separate backup.'))return;
+   if(!safeWrite('history',history)||!safeWrite('schedule',schedule)||!safeWrite('revision',revision))throw new Error('Your browser could not save the imported data. Check available storage and try again.');
+   setStat('xp',Math.max(0,Number(data.xp)||0));setStat('best',Math.max(0,Number(data.bestStreak)||0));setStat('played',Math.max(0,Number(data.questionsAnswered)||history.length));
+   refreshStats();alert('PabAce progress imported successfully!');
+  }catch(err){alert(err.message||'Could not import this backup. Please select a valid PabAce JSON export.')}
+  finally{input.value=''}
+ };
+ reader.onerror=()=>{alert('The backup file could not be read. Please try again.');input.value=''};
+ reader.readAsText(file);
 }
 function startGame(m){if(!window.QBANK||!QBANK.length){alert('Question bank is loading. Refresh the page in a moment.');return}mode=m;run=m==='chill'?[...QBANK]:m==='daily'?dailyQuestions():shuffle(QBANK).slice(0,m==='speed'?10:20);idx=0;score=0;roundXP=0;streak=0;missed=[];$('flashcardLab').classList.add('hide');$('adventure').classList.add('hide');$('result').classList.add('hide');$('game').classList.remove('hide');$('modeName').textContent=m==='chill'?'🧠 Chill Practice':m==='speed'?'⚡ Speed Blitz':m==='daily'?'📅 Daily Challenge':m==='review'?'🔁 Mistake Vault':m==='topic'?'🎯 Topic Sprint':'👑 Boss Battle';$('game').scrollIntoView({behavior:'smooth',block:'start'});renderQ()}
 function escapeHTML(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
