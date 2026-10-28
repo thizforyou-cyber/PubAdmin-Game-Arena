@@ -24,6 +24,13 @@ The original question bank is kept in `questions.js` and has not been rewritten 
 5. Wait for deployment, then open:
    https://thizforyou-cyber.github.io/PubAdmin-Game-Arena/
 
+## Progress and revision
+- Study HQ dashboard shows accuracy from recorded attempts, distinct questions attempted, saved questions due for review, and the lowest-accuracy topics from your own activity.
+- Incorrect answers are added to the revision list; review attempts that are answered correctly are removed from it.
+- A lightweight spaced-review schedule suggests 1, 3, 7 and 14-day intervals after consecutive correct answers; wrong answers become due immediately.
+- Export your study history and revision metadata as a JSON file for backup.
+- Progress is stored in the current browser using local storage; it does not automatically sync across browsers or devices. Existing progress from before this update is not retroactively included in topic accuracy.
+
 ## Files
 - `index.html` — interface, layout, game modes and learning tools
 - `questions.js` — original supplied question bank
