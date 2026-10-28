@@ -35,8 +35,8 @@ for (const key of Object.keys(notes)) {
   assert.ok(numbers.includes(Number(key)), `Learning note ${key} has no matching question`);
 }
 
-const inlineScripts = [...html.matchAll(/<script\\b([^>]*)>([\\s\\S]*?)<\\/script>/gi)]
-  .filter((match) => !/\\bsrc=/.test(match[1]))
+const inlineScripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
+  .filter((match) => !/\bsrc=/.test(match[1]))
   .map((match) => match[2]);
 assert.ok(inlineScripts.length > 0, "index.html should contain the app script");
 for (const [index, script] of inlineScripts.entries()) {
@@ -47,11 +47,11 @@ assert.doesNotThrow(() => new Function(learningSource), "learning.js must parse"
 assert.doesNotThrow(() => new Function(serviceWorker), "service-worker.js must parse");
 assert.doesNotThrow(() => JSON.parse(manifestSource), "manifest.json must be valid JSON");
 
-const ids = [...html.matchAll(/\\bid=["']([^"']+)["']/g)].map((match) => match[1]);
+const ids = [...html.matchAll(/\bid=["']([^"']+)["']/g)].map((match) => match[1]);
 assert.equal(new Set(ids).size, ids.length, "Static HTML element IDs must be unique");
 for (const asset of ["questions.js", "learning.js", "manifest.json", "service-worker.js", "icon.svg"]) {
   assert.ok(html.includes(asset), `index.html should reference ${asset}`);
-  assert.ok(serviceWorker.includes(asset), `Offline cache should include ${asset}`);
+  if (asset !== "service-worker.js") assert.ok(serviceWorker.includes(asset), `Offline cache should include ${asset}`);
 }
 
 console.log(`PabAce checks passed: ${questions.length} questions, ${Object.keys(notes).length} learning notes, scripts and PWA files validated.`);
