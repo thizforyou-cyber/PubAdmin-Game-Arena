@@ -1,5 +1,5 @@
-/* Curated learning notes and verified supplementary questions.
-   Original QBANK items and answer keys are intentionally left unchanged. */
+/* Curated, question-specific notes for the original Q51-Q140 bank.
+   Verified answer-key corrections are reflected in questions.js; original question wording and options are preserved. */
 window.LEARNING_NOTES = {
   81: {
     topic: "Indian Constitution & Local Government",
@@ -46,7 +46,7 @@ window.LEARNING_NOTES = {
 
   56: {
     topic: "Disaster Management",
-    why: "Option 2 is incorrect: the National Disaster Management Authority is chaired by the Prime Minister, not the Home Minister. The Disaster Management Act also provides for a National Disaster Mitigation Fund.",
+    why: "The statement in option B is the one that is not correct: the National Disaster Management Authority is chaired by the Prime Minister, not the Home Minister. The Disaster Management Act also provides for a National Disaster Mitigation Fund.",
     memory: "NDMA chairperson = Prime Minister; Section 47 provides for the National Disaster Mitigation Fund.",
     source: "https://indiacode.ecourtsindia.com/disaster-management-act-2005/section/47/"
   },
