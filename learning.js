@@ -42,7 +42,7 @@ window.LEARNING_NOTES = {
     memory: "Q59: earliest origins of public administration → Dwight Waldo. Do not confuse this quote with Gulick's POSDCORB.",
     exam: "Choose option C (the third option): Dwight Waldo.",
     source: "https://testbook.com/question-answer/who-of-the-following-thinkers-define-public-admin--6a84148d1f0d7a4b63d21aa6/amp"
-  }
+  },
 
   56: {
     topic: "Disaster Management",
