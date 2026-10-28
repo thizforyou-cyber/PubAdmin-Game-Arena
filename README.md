@@ -5,7 +5,7 @@ A playful, mobile-friendly UGC NET Public Administration study game built with p
 ## Learning and game modes
 - 90 original supplied questions (Q.51–Q.140), with the original answer key preserved
 - 20 additional practice questions (Q.141–Q.160) on constitutional provisions, RTI, local government, public audit and Administrative Reforms Commission reports
-- Chill Practice, Speed Blitz (10 questions), Boss Battle (20 questions), and Admin Adventure
+- Chill Practice, Daily Challenge (10 repeatable questions that refresh by local calendar day), Speed Blitz (10 questions), Boss Battle (20 questions), and Admin Adventure
 - Topic Sprints for focused practice
 - Memory Lab flashcards with answer reveal, learning notes and source links
 - Mistake Vault: incorrect answers are saved automatically; cards can also be saved manually for later revision
