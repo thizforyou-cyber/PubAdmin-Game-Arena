@@ -73,19 +73,20 @@ function buildOptionReview(q){
  const labels=['A','B','C','D','E','F'];
  const options=(q.o||[]).map((option,index)=>{
   const isKey=index===Number(q.a);
-  return '<div class="option-review-item '+(isKey?'option-key':'option-distractor')+'"><b>'+labels[index]+'. '+(isKey?'✓ Answer-key option':'Distractor')+'</b><p>'+escapeHTML(option)+'</p><p class="tiny">'+(isKey?'Marked as correct in your original question bank.':'Review cue: explain why this option does not fit the question, then verify it using the reference/search links below.')+'</p></div>';
+  return '<div class="option-review-item '+(isKey?'option-key':'option-distractor')+'"><b>'+labels[index]+'. '+(isKey?'✓ Correct answer':'Option')+'</b><p>'+escapeHTML(option)+'</p></div>';
  }).join('');
- return '<details class="option-review"><summary>🧩 Review every answer option</summary><p class="tiny">The original answer key is preserved. For each distractor, try to state the reason it is wrong before opening a reference.</p>'+options+'</details>';
+ return '<details class="option-review"><summary>View all options</summary>'+options+'</details>';
 }
 function showLearning(q,correct){
  const panel=$('learningPanel'),note=(window.LEARNING_NOTES||{})[q.n]||{};
  const topic=note.topic||q.topic||'Public Administration',saved=getRevisionIds().includes(q.n);
- const explanation=note.why||'A verified question-specific explanation has not been added yet. The original answer key is preserved; please check the source material before relying on this answer.';
- const memory=note.memory?'<p><b>Remember:</b> '+escapeHTML(note.memory)+'</p>':'';
  const answerLabel=String.fromCharCode(65+q.a)+'. '+(q.o[q.a]||('Option '+(q.a+1)));
- panel.innerHTML='<div class="learning-label">🧠 ANSWER EXPLANATION</div><div class="topic-pill">'+escapeHTML(topic)+'</div><h3>'+(correct===true?'🎉 Correct!':correct===false?'🔍 Correct answer & explanation':'📘 Explanation')+'</h3><p><b>Correct answer: '+escapeHTML(answerLabel)+'</b></p><p>'+escapeHTML(explanation)+'</p>'+memory+buildOptionReview(q)+(note.source?'<p><b>Source:</b> <a class="source-link" href="'+escapeHTML(note.source)+'" target="_blank" rel="noopener noreferrer">Check reference ↗</a></p>':'')+'<div class="learning-actions"><button class="secondary" onclick="toggleRevision('+Number(q.n)+')">'+(saved?'✓ Saved for revision — remove':'🔖 Save for revision')+'</button></div>';
+ const explanation=note.why?'<p>'+escapeHTML(note.why)+'</p>':'';
+ const memory=note.memory?'<p class="answer-memory"><b>Remember:</b> '+escapeHTML(note.memory)+'</p>':'';
+ panel.innerHTML='<div class="learning-label">ANSWER</div><div class="topic-pill">'+escapeHTML(topic)+'</div><h3>'+(correct===true?'Correct!':correct===false?'Correct answer':'Answer & explanation')+'</h3><p class="correct-answer"><b>'+escapeHTML(answerLabel)+'</b></p>'+explanation+memory+buildOptionReview(q)+(note.source?'<p class="answer-source"><a class="source-link" href="'+escapeHTML(note.source)+'" target="_blank" rel="noopener noreferrer">Read reference</a></p>':'')+'<div class="learning-actions"><button class="secondary" onclick="toggleRevision('+Number(q.n)+')">'+(saved?'✓ Saved for revision — remove':'🔖 Save for revision')+'</button></div>';
  panel.classList.remove('hide');
 }
+
 let flashRun=[],flashIdx=0,flashRevealed=false;
 function startFlashcards(){flashRun=shuffle(QBANK);flashIdx=0;flashRevealed=false;$('game').classList.add('hide');$('result').classList.add('hide');$('adventure').classList.add('hide');$('flashcardLab').classList.remove('hide');$('flashcardLab').scrollIntoView({behavior:'smooth',block:'start'});renderFlashcard()}
 function renderFlashcard(){if(!flashRun.length)return;flashRevealed=false;const q=flashRun[flashIdx];$('flashCounter').textContent='Card '+(flashIdx+1)+'/'+flashRun.length;$('flashProgress').style.width=((flashIdx+1)/flashRun.length*100)+'%';$('flashTopic').textContent=q.topic||((window.LEARNING_NOTES||{})[q.n]||{}).topic||'Public Administration';$('flashQuestion').textContent=q.q;$('flashAnswer').classList.add('hide');$('flashAnswer').innerHTML='';$('flashReveal').classList.remove('hide');$('flashAgain').classList.add('hide');$('flashKnown').classList.add('hide')}
