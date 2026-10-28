@@ -110,6 +110,97 @@ window.LEARNING_NOTES = {
     memory: "Source → Message → Channel → Receiver → Feedback.",
     source: "https://files.comminit.com/content/shannon-and-weavers-communication-model"
   },
+
+  52: {
+    topic: "Indian Administration",
+    why: "The best available sequence is option 3: D, C, A, E, B. Important: Testbook notes that NTA dropped this question and that its options were modified, so treat it as a practice item rather than a dependable scored PYQ.",
+    memory: "NTA dropped this question; verify before using it for exam scoring.",
+    source: "https://testbook.com/question-answer/arrange-the-set-up-of-following-commissions-in-chr--6a84148e54b3eec81d1742c4/amp"
+  },
+  60: {
+    topic: "Public Policy",
+    why: "Option 2 is correct: A, B, D and E. Incrementalism is conservative, politically feasible and descriptive; it assumes decision-makers have limited time, information and resources. It is not a goal-focused model.",
+    memory: "Incrementalism = small changes, status quo, political feasibility, limited rationality.",
+    source: "https://testbook.com/question-answer/which-of-the-followings-is-correct-regarding-incre--6a84148b348883f48a838643"
+  },
+  63: {
+    topic: "Research Methodology",
+    why: "Option 3 matches the terms correctly: cluster sampling divides a population into groups; a sample is the selected number of items; sample design is the selection procedure; a sampling frame lists the population items.",
+    memory: "Cluster = groups; sample = selected items; design = procedure; frame = list.",
+    source: "https://testbook.com/question-answer/match-the-list-i-with-list-i--6a84149ca96c8aa81b7c4b04"
+  },
+  67: {
+    topic: "Indian Administration",
+    why: "Option 4 (A, B and D) is correct. NITI Aayog was established by Cabinet Resolution on 1 January 2015 and supports national development priorities. Statement C is false because NITI Aayog can be assisted by Regional Councils.",
+    memory: "NITI Aayog: 2015; Regional Councils do exist.",
+    source: "https://testbook.com/question-answer/which-of-the-following-statements-about-national-i--6a8414abab431590c84de9b0/amp"
+  },
+  68: {
+    topic: "Social Welfare Administration",
+    why: "Option 2 (A, C and D) is correct. PM-YASASVI covers OBC, EBC and DNT students; Scheduled Castes are not listed as a beneficiary category in this scheme.",
+    memory: "PM-YASASVI = OBC + EBC + DNT.",
+    source: "https://www.myscheme.gov.in/schemes/pm-yasasvitcceobcebcdnts"
+  },
+  69: {
+    topic: "Governance and Accountability",
+    why: "Autocracy (option 1) is not an essence of accountability. Accountability requires answerability, public participation and performance orientation, not unchecked power.",
+    memory: "Accountability opposes autocracy.",
+    source: "https://testbook.com/question-answer/which-of-the-following-is-not-correct-about-the--6a8414a84094ddbbaeceb78c"
+  },
+  103: {
+    topic: "Governance and Accountability",
+    why: "Option 3 is the incorrect statement. The Whistle Blowers Protection Act addresses disclosures about corruption and misuse of power, including private gain obtained through public responsibilities.",
+    memory: "The Act covers corruption and misuse of official power for wrongful gain.",
+    source: "https://testbook.com/question-answer/which-of-the-following-is-not-correct-about-whistl--6a84148e21fd595ca6de9d02"
+  },
+  104: {
+    topic: "Indian Constitution & Social Welfare",
+    why: "Option 4 (A, B and E) is correct. Articles 38 and 46 address welfare and weaker sections; Article 335 concerns SC/ST claims in public services. Articles 340 and 341 do not provide the parliamentary seat reservations described in statements C and D.",
+    memory: "Article 38 = welfare; 46 = weaker sections; 335 = services; 340 = backward-class commission; 341 = Scheduled Castes.",
+    source: "https://testbook.com/question-answer/read-the-following-provisions-of-constitution-rega--6a84149ac49d41c108964e2f/amp"
+  },
+  109: {
+    topic: "Governance and Good Governance",
+    why: "Option 2 (A, B and D) is correct. The Citizen's Charter began in Britain, supports citizen participation and aims to improve public-service efficiency and effectiveness. Statement C is not correct.",
+    memory: "Citizen's Charter: Britain + participation + better service.",
+    source: "https://testbook.com/question-answer/which-of-the-following-statements-are-correct-abou--6a84149da07d2d992db28189/amp"
+  },
+  111: {
+    topic: "Comparative and Development Administration",
+    why: "Option 2 is correct: George F. Gant—Development Administration: Concepts, Goals, Methods; B. Guy Peters—The Politics of Bureaucracy; Ferrel Heady and Sybil Stokes—Papers in Comparative Public Administration; F. W. Riggs—Administration in Developing Countries.",
+    memory: "Gant = Development Administration; Peters = Politics of Bureaucracy; Riggs = Administration in Developing Countries.",
+    source: "https://testbook.com/question-answer/match-the-list-i-with-list-iilist-i-author-edit--6a8414ae3b16163bc9aaf5a6"
+  },
+  112: {
+    topic: "Economic and Financial Administration",
+    why: "Option 3 (A and D only) is correct. The surcharge on income tax and corporation tax belong exclusively to the Union; land revenue and tolls are not Union-exclusive taxes.",
+    memory: "Union-exclusive here: surcharge on income tax + corporation tax.",
+    source: "https://testbook.com/question-answer/which-of-the-following-taxes-belonging-to-the-unio--6a8414971f5d254ec9f50217"
+  },
+  114: {
+    topic: "Economic and Financial Administration",
+    why: "Option 4 is correct: K. Santhanam—Second Finance Commission; Brahmanand Reddy—Sixth; Y. B. Chavan—Eighth; C. Rangarajan—Twelfth.",
+    memory: "Santhanam 2nd; Reddy 6th; Chavan 8th; Rangarajan 12th.",
+    source: "https://testbook.com/question-answer/match-the-list-i-with-list-iilist-i-chairmanlist--6a8414987fb08376d6cbb24c"
+  },
+  117: {
+    topic: "Administrative Thought",
+    why: "Option 2 (B, C and D) is correct. Drucker developed Management by Objectives, so statement A is false; he wrote about knowledge workers, self-management and management as a liberal art.",
+    memory: "Drucker = MBO + knowledge workers + self-management + liberal art.",
+    source: "https://testbook.com/question-answer/which-of-the-following-statements-are-correct-abou--6a84148c10d48ab39403f66b"
+  },
+  120: {
+    topic: "State and Local Administration",
+    why: "Option 3 gives the sequence C, B, D, E, A. The Local Finance Enquiry Committee came first, followed by the Taxation Enquiry Commission, Rural-Urban Relationship Committee, municipal budget-reform committee, and National Commission on Urbanization.",
+    memory: "C → B → D → E → A.",
+    source: "https://testbook.com/question-answer/arrange-the-following-in-chronological-ordera-n--6a84149c6e24783a19cfb929"
+  },
+  128: {
+    topic: "Public Policy Analysis",
+    why: "Option 2 is correct: Formulation → Search → Forecasting → Modeling → Evaluation. Quade begins by defining the problem and objectives before searching for alternatives.",
+    memory: "Formulate → Search → Forecast → Model → Evaluate.",
+    source: "https://testbook.com/question-answer/according-to-edward-s-quade-the-decision-making--6a841495b97d1184d20d54bd/amp"
+  },
 };
 
 
