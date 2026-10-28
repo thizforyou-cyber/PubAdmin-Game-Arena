@@ -43,6 +43,73 @@ window.LEARNING_NOTES = {
     exam: "Choose option C (the third option): Dwight Waldo.",
     source: "https://testbook.com/question-answer/who-of-the-following-thinkers-define-public-admin--6a84148d1f0d7a4b63d21aa6/amp"
   }
+
+  56: {
+    topic: "Disaster Management",
+    why: "Option 2 is incorrect: the National Disaster Management Authority is chaired by the Prime Minister, not the Home Minister. The Disaster Management Act also provides for a National Disaster Mitigation Fund.",
+    memory: "NDMA chairperson = Prime Minister; Section 47 provides for the National Disaster Mitigation Fund.",
+    source: "https://indiacode.ecourtsindia.com/disaster-management-act-2005/section/47/"
+  },
+  74: {
+    topic: "Public Policy",
+    why: "Option 2 is the incorrect statement. Identifying the evaluation area is a real step in policy evaluation; saying that the area is not identified is not a valid step.",
+    memory: "Evaluation steps include purpose, area, method, and results.",
+    source: "https://testbook.com/question-answer/which-of-the-following-is-not-a-part-of-policy-eva--6a84149ba96c8aa81b7c4b03"
+  },
+  78: {
+    topic: "Social Welfare Administration",
+    why: "The chronological order is E, D, C, A, B: Dowry Prohibition Act (1961), Equal Remuneration Act (1976), Sati (Prevention) Act (1987), Pre-Natal Diagnostic Techniques Act (1994), and Protection of Women from Domestic Violence Act (2005).",
+    memory: "1961 → 1976 → 1987 → 1994 → 2005.",
+    source: "https://testbook.com/"
+  },
+  85: {
+    topic: "Economic and Financial Administration",
+    why: "The correct answer is option 2: the Contingency Fund of India Act is from 1950, not 1951.",
+    memory: "Contingency Fund of India Act = 1950.",
+    source: "https://www.indiacode.nic.in/bitstream/123456789/1696/1/aA1950-49.pdf"
+  },
+  94: {
+    topic: "Administrative Thought",
+    why: "The linking-pin model is identified by option 4: each person links two overlapping groups, acting as a member of the higher-level group and leader of the lower-level group.",
+    memory: "Likert's linking pin = two overlapping groups.",
+    source: "https://testbook.com/question-answer/in-the-linking-pin-model--6a8414a186bec0a1dc7e8320"
+  },
+  99: {
+    topic: "Indian Administration",
+    why: "The chronological order is E, A, B, C, D: Gore Committee (1971), National Police Commission (1977), Ribeiro Committee (1998), Malimath Committee (2000/2003, depending on the reference used), and Soli Sorabjee's Police Act Drafting Committee (2005).",
+    memory: "Gore → National Police Commission → Ribeiro → Malimath → Soli Sorabjee.",
+    source: "https://www.drishtiias.com/daily-updates/daily-news-analysis/police-reforms-in-india-2"
+  },
+  129: {
+    topic: "Disaster Management",
+    why: "Option 1 is incorrect. A disaster exceeds the affected community's ability to cope with it using its own resources; an event within its coping capacity does not meet this standard definition.",
+    memory: "Disaster = impact exceeds local coping capacity.",
+    source: "https://www.undrr.org/terminology/disaster"
+  },
+  130: {
+    topic: "Indian Constitution",
+    why: "The correct answer is Article 155. It states that the Governor is appointed by the President by warrant under the President's hand and seal.",
+    memory: "Article 155 = appointment of Governor.",
+    source: "https://indiacode.ecourtsindia.com/constitution-of-india/article/155/"
+  },
+  133: {
+    topic: "Comparative and Development Administration",
+    why: "The definition in the question is attributed to Jamil Jreisat, option 3. It emphasises that administrative institutions and behaviour must be studied in their social, political, cultural, and economic contexts.",
+    memory: "Context-centred definition of comparative public administration → Jamil Jreisat.",
+    source: "https://testbook.com/question-answer/who-of-the-following-defined-comparative-public--6a8414a9c03132905a3a1923"
+  },
+  135: {
+    topic: "Administrative Thought",
+    why: "The correct matching is A–II, B–III, C–I, D–IV: Administrative Theories and Politics—Peter Self; Policy and Administration—Frank J. Goodnow; New Public Administration—H. George Frederickson; The Intellectual Crisis in American Public Administration—Vincent Ostrom.",
+    memory: "Self → Administrative Theories and Politics; Goodnow → Policy and Administration; Frederickson → New Public Administration; Ostrom → Intellectual Crisis.",
+    source: "https://testbook.com/question-answer/match-the-list-i-with-list-iilist-i-bo--6a8414a215917f70d21a9a65"
+  },
+  138: {
+    topic: "Communication",
+    why: "The intended order is A, E, B, C, D: source and encoding → message → channel → decoding and receiver → feedback. This is option 2.",
+    memory: "Source → Message → Channel → Receiver → Feedback.",
+    source: "https://files.comminit.com/content/shannon-and-weavers-communication-model"
+  },
 };
 
 
