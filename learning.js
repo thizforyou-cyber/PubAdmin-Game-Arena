@@ -201,6 +201,25 @@ window.LEARNING_NOTES = {
     memory: "Formulate → Search → Forecast → Model → Evaluate.",
     source: "https://testbook.com/question-answer/according-to-edward-s-quade-the-decision-making--6a841495b97d1184d20d54bd/amp"
   },
+
+  73: {
+    topic: "Indian Administration",
+    why: "Option 3 is correct: National Forest Academy (1938) → Institute of Secretariat Training and Management (1948) → Administrative Staff College of India (1956) → National Academy of Administration (1959) → National Institute for Smart Government (2002).",
+    memory: "1938 → 1948 → 1956 → 1959 → 2002.",
+    source: "https://testbook.com/question-answer/arrange-the-following-organizations-in-chronologic--6a8414922827fb4563bec64b"
+  },
+  105: {
+    topic: "Comparative and Development Administration",
+    why: "Option 3 is the expected answer in this question: A, B, C and D only. The listed groups are the State Civil Service, Judiciary, public administration establishments and Territorial Civil Service; the Senior Executive Service is not a separate French civil-service branch in this classification.",
+    memory: "Do not confuse the French civil-service branches with a senior-executive category.",
+    source: "https://testbook.com/question-answer/the-french-civil-service-has-more-than-five-millio--6a841499c03132905a3a17fe"
+  },
+  87: {
+    topic: "Indian Constitution",
+    why: "The expected answer is option 4: the exam source treats withholding assent to a Money Bill as the statement that is not true. For exam revision, remember Article 200 distinguishes returning a non-Money Bill from the options available for a Money Bill.",
+    memory: "Article 200: a Governor may return a non-Money Bill, not a Money Bill, for reconsideration.",
+    source: "https://testbook.com/question-answer/which-of-the-following-is-not-true-about-the-gover--6a8414ae6d3976b0d1abe69d"
+  },
 };
 
 
