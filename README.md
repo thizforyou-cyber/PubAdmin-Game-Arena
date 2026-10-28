@@ -1,4 +1,4 @@
-# PubAdmin Game Arena 🎮
+# PabAce 🎮
 
 A playful, mobile-friendly UGC NET Public Administration study game built with plain HTML, CSS and JavaScript.
 
