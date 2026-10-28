@@ -220,6 +220,20 @@ window.LEARNING_NOTES = {
     memory: "Article 200: a Governor may return a non-Money Bill, not a Money Bill, for reconsideration.",
     source: "https://testbook.com/question-answer/which-of-the-following-is-not-true-about-the-gover--6a8414ae6d3976b0d1abe69d"
   },
+  110: {
+    topic: "Research Methodology",
+    why: "Goode and Hatt describe theory as the meaningful ordering of facts and the relationships among them. In research, theory helps organise observations and explain how facts are connected; it is more than a list of unrelated facts.",
+    memory: "Goode & Hatt → theory connects and organises facts.",
+    example: "A public-administration researcher studying employee motivation might organise observations about recognition, workload and performance into a theory explaining how these factors relate.",
+    exam: "Remember the author pair William J. Goode and Paul K. Hatt for this definition. In research-method questions, distinguish a theory (an organised explanation) from a hypothesis (a tentative, testable statement).",
+    optionWhy: {
+      A: "Ram Ahuja is associated with Indian sociology and research-method texts, but is not the keyed author pair for this definition.",
+      B: "Fisher R.A. is known for statistical methods and experimental design, not this specific definition in the supplied question.",
+      C: "John W. Creswell is known for research design and qualitative, quantitative and mixed-methods approaches, but is not the keyed author pair here.",
+      D: "William J. Goode and Paul K. Hatt are the author pair associated with this definition of theory in social research."
+    },
+    source: "https://archive.org/search?query=Goode+Hatt+Methods+in+Social+Research"
+  },
 };
 
 
