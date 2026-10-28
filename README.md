@@ -1,27 +1,33 @@
 # PubAdmin Game Arena 🎮
 
-A playful, mobile-friendly UGC NET Public Administration quiz game.
+A playful, mobile-friendly UGC NET Public Administration study game built with plain HTML, CSS and JavaScript.
 
-## Included
-- All 90 supplied questions (Q.51–Q.140) and their answer key
-- Chill Practice, Speed Blitz (10 questions), and Boss Battle (20 questions)
-- XP, streak tracking, hints that eliminate one wrong option, instant answer feedback
-- End-of-round score and mistakes review
+## Learning and game modes
+- 90 original supplied questions (Q.51–Q.140), with the original answer key preserved
+- 20 additional practice questions (Q.141–Q.160) on constitutional provisions, RTI, local government, public audit and Administrative Reforms Commission reports
+- Chill Practice, Speed Blitz (10 questions), Boss Battle (20 questions), and Admin Adventure
+- Topic Sprints for focused practice
+- Memory Lab flashcards with answer reveal, learning notes and source links
+- Mistake Vault: incorrect answers are saved automatically; cards can also be saved manually for later revision
+- Learning cards with simple explanations, memory hooks, exam connections and source links where notes are available
+- XP, streaks, hints, answer feedback and end-of-round review
 - Responsive layout for desktop and mobile
-- XP and best streak saved in this browser
 
-## Publish the website with GitHub Pages
+## Source and answer-key policy
+The original question bank is kept in `questions.js` and has not been rewritten by the supplementary-question update. New questions and learning notes are in `learning.js`. Supplementary factual items link to official constitutional, government or statutory sources where available. Original answer keys are reproduced as supplied and should be reviewed separately if a possible source error is found.
+
+## Publish with GitHub Pages
 1. Open this repository on GitHub.
 2. Select **Settings** → **Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**.
 4. Choose branch **main** and folder **/(root)**, then click **Save**.
-5. Wait a few minutes. The website should appear at:
+5. Wait for deployment, then open:
    https://thizforyou-cyber.github.io/PubAdmin-Game-Arena/
 
-The site uses plain HTML, CSS, and JavaScript; no build tools or installation are needed.
-
 ## Files
-- `index.html` — the game interface and gameplay logic
-- `questions.js` — the question bank extracted from the supplied Word document
+- `index.html` — interface, layout, game modes and learning tools
+- `questions.js` — original supplied question bank
+- `learning.js` — learning notes and 20 supplementary questions with references
+- `.nojekyll` — GitHub Pages configuration
 
-Note: the answer key is reproduced from the supplied document. If any original answer is incorrect, update it in `questions.js`.
+No installation or build step is required.
