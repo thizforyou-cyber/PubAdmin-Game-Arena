@@ -8,6 +8,27 @@ window.LEARNING_NOTES = {
     exam: "These provisions are in Parts IX and IX-A of the Constitution, introduced through the 73rd and 74th Constitutional Amendments.",
     source: "https://www.legislative.gov.in/static/uploads/2025/07/359f70a69695affb9d72f8393102bd2e.pdf"
   },
+  51: {
+    topic: "Administrative Thinkers & Books",
+    why: "The supplied answer key matches General and Industrial Management with Henri Fayol; Papers on the Science of Administration with Gulick and Urwick; The Science of Administration: Three Problems with Robert Dahl; and Reflections on Public Administration with John M. Gaus.",
+    memory: "Fayol = General/Industrial Management; Gulick & Urwick = Papers on Administration; Dahl = three problems; Gaus = reflections.",
+    exam: "For matching questions, revise book titles and authors together and watch for similar titles about the science of administration.",
+    source: "https://archive.org/search?query=General+and+Industrial+Management+Henri+Fayol"
+  },
+  62: {
+    topic: "Local Government",
+    why: "In the conventional matching used in this question: a Village Panchayat is associated with a Sarpanch; a Panchayat Samiti with a Block Development Officer; a Municipal Council with a President; and a Municipal Corporation with a Mayor.",
+    memory: "Village—Sarpanch; Block—BDO; Council—President; Corporation—Mayor.",
+    exam: "Titles and exact arrangements may vary under state laws, so distinguish the common exam convention from each state's statutory rules.",
+    source: "https://www.legislative.gov.in/static/uploads/2025/07/359f70a69695affb9d72f8393102bd2e.pdf"
+  },
+  82: {
+    topic: "Research Methods",
+    why: "A variable is a characteristic assigned a value; a hypothesis is a tentative statement about relationships between variables; a theory is a connected set of concepts and propositions; and scientific research is a systematic, controlled, empirical and critical investigation.",
+    memory: "Variable = value; Hypothesis = proposed relationship; Theory = connected explanation; Research = systematic investigation.",
+    exam: "Research-methods matching questions often test definitions rather than examples. Identify the defining phrase before selecting a match.",
+    source: "https://www.ugcnetonline.in/syllabus-new.php"
+  },
   53: {
     topic: "Union Government & Secretariat",
     why: "The Cabinet Secretariat supports the Cabinet and Cabinet committees and helps coordinate government business. Its precise organisation and rules should be studied from official Government of India material; the original question and key have been retained as supplied.",
