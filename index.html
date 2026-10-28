@@ -59,7 +59,7 @@
 .syllabus-unit:hover,.syllabus-unit:focus-visible{transform:translateY(-2px);border-color:var(--yellow)}
 .unit-number{display:grid;place-items:center;flex:0 0 43px;height:43px;border-radius:13px;background:#d9b56d18;color:var(--yellow);font-weight:900;font-size:13px}
 .unit-copy{min-width:0}.unit-copy strong{display:block;line-height:1.35;margin:1px 0 6px}.unit-copy small{display:block;color:var(--muted);line-height:1.5}
-.topic-sprint-button{padding:10px 13px}
+.unit-progress-meta{display:block;color:var(--muted);font-size:11px;line-height:1.5;margin-top:9px}.unit-progress-track{display:block;height:6px;margin-top:6px;background:#ffffff13;border-radius:99px;overflow:hidden}.unit-progress-fill{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--yellow));border-radius:99px;transition:width .3s}.syllabus-unit .unit-copy{flex:1}.topic-sprint-button{padding:10px 13px}
 .actions{justify-content:flex-end;gap:12px}
 #nextBtn{min-width:180px;min-height:48px;box-shadow:0 7px 22px #d9b56d20}
 #game .game-back-row{display:flex;justify-content:flex-start;margin-bottom:14px}
@@ -459,7 +459,17 @@ function renderStudyDashboard(){
  $('dueStat').textContent=due.length;
  const byTopic={};history.forEach(x=>{const k=x.topic||'Public Administration';if(!byTopic[k])byTopic[k]={total:0,correct:0};byTopic[k].total++;if(x.correct)byTopic[k].correct++});
  const topics=Object.entries(byTopic).map(([name,v])=>({name,total:v.total,pct:Math.round(v.correct/v.total*100)})).sort((a,b)=>a.pct-b.pct).slice(0,4);
+ renderUnitProgress();
  host.innerHTML=topics.length?'<div style="font-weight:800;margin:4px 0">Topics to focus on</div>'+topics.map(t=>'<div style="padding:10px 12px;border:1px solid #51466f;border-radius:10px;background:#211b36"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><b>'+escapeHTML(t.name)+'</b><span style="color:var(--yellow);font-weight:800">'+t.pct+'% · '+t.total+' attempts</span></div><div style="height:7px;background:#100d20;border-radius:8px;overflow:hidden;margin-top:8px"><div style="height:100%;width:'+t.pct+'%;background:var(--mint);border-radius:8px"></div></div></div>').join(''):'<div class="tiny" style="padding:12px;border:1px dashed #51466f;border-radius:10px">Your topic insights will appear here after you answer some questions. Start with a short practice round.</div>';
+}
+function renderUnitProgress(){
+ const history=safeRead('history',[]),attempted=new Set(history.map(x=>Number(x.n)));
+ UGC_UNITS.forEach((unit,index)=>{
+  const questions=QBANK.filter(q=>syllabusUnitFor(q)===index),done=questions.filter(q=>attempted.has(Number(q.n))).length,pct=questions.length?Math.round(done/questions.length*100):0;
+  const meta=$('unitProgressMeta'+index),fill=$('unitProgressFill'+index);
+  if(meta)meta.textContent=done+' / '+questions.length+' questions tried · '+pct+'%';
+  if(fill)fill.style.width=pct+'%';
+ });
 }
 function exportStudyProgress(){
  const data={app:'PabAce',exportedAt:new Date().toISOString(),history:safeRead('history',[]),schedule:safeRead('schedule',{}),revision:getRevisionIds(),xp:stat('xp'),bestStreak:stat('best'),questionsAnswered:stat('played')};
@@ -593,7 +603,7 @@ function openSyllabusUnit(index){
 function buildTopicPractice(){
  Object.keys(window.LEARNING_NOTES||{}).forEach(n=>{const q=QBANK.find(item=>item.n===Number(n));if(q&&!q.topic)q.topic=window.LEARNING_NOTES[n].topic});
  const host=$('syllabusUnits');if(!host)return;host.innerHTML='';
- UGC_UNITS.forEach((unit,index)=>{const count=QBANK.filter(q=>syllabusUnitFor(q)===index).length,b=document.createElement('button');b.className='syllabus-unit';b.type='button';b.innerHTML='<span class="unit-number">UNIT '+unit.roman+'</span><span class="unit-copy"><strong>'+unit.title+'</strong><small>'+unit.desc+'</small><small style="color:var(--yellow);margin-top:7px">'+count+' practice questions →</small></span>';b.onclick=()=>openSyllabusUnit(index);host.appendChild(b)});
+ UGC_UNITS.forEach((unit,index)=>{const count=QBANK.filter(q=>syllabusUnitFor(q)===index).length,b=document.createElement('button');b.className='syllabus-unit';b.type='button';b.innerHTML='<span class="unit-number">UNIT '+unit.roman+'</span><span class="unit-copy"><strong>'+unit.title+'</strong><small>'+unit.desc+'</small><small style="color:var(--yellow);margin-top:7px">'+count+' practice questions</small><span class="unit-progress-meta" id="unitProgressMeta'+index+'">0 / '+count+' questions tried · 0%</span><span class="unit-progress-track"><span class="unit-progress-fill" id="unitProgressFill'+index+'"></span></span></span>';b.onclick=()=>openSyllabusUnit(index);host.appendChild(b)});renderUnitProgress();
 }
 let activeUnit=null;
 function startUnitPractice(index){const unit=UGC_UNITS[index],tagged=QBANK.filter(q=>syllabusUnitFor(q)===index);if(!tagged.length)return;activeUnit=index;startQuestionSet(shuffle(tagged),'🎯 Unit '+unit.roman+': '+unit.title);}
