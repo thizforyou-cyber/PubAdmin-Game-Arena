@@ -28,7 +28,7 @@ The original question bank is kept in `questions.js` and has not been rewritten 
 - Study HQ dashboard shows accuracy from recorded attempts, distinct questions attempted, saved questions due for review, and the lowest-accuracy topics from your own activity.
 - Incorrect answers are added to the revision list; review attempts that are answered correctly are removed from it.
 - A lightweight spaced-review schedule suggests 1, 3, 7 and 14-day intervals after consecutive correct answers; wrong answers become due immediately.
-- Export your study history and revision metadata as a JSON file for backup.
+- Export your study history and revision metadata as a JSON backup, then import it later to restore progress in this or another browser. Import validates the backup and asks before replacing current local progress.
 - Progress is stored in the current browser using local storage; it does not automatically sync across browsers or devices. Existing progress from before this update is not retroactively included in topic accuracy.
 
 ## Files
