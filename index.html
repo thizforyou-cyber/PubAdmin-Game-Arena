@@ -502,7 +502,7 @@ function escapeHTML(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&am
 function parseListItems(text,pattern){const hits=[...text.matchAll(pattern)];return hits.map((m,i)=>({key:m[1],text:text.slice(m.index+m[0].length,i+1<hits.length?hits[i+1].index:text.length).trim().replace(/[;,\s]+$/,'')})).filter(x=>x.text)}
 function renderQuestion(raw){
  const el=$('question');
- const text=String(raw).replace(/<PARSED TEXT OF PAGE:\s*\d+\s*\/\s*\d+>/gi,' ').replace(/\\s+/g,' ').trim()
+ const text=String(raw).replace(/<PARSED TEXT (?:OF|FOR) PAGE:\s*\d+\s*\/\s*\d+>/gi,' ').replace(/\\s+/g,' ').trim()
   .replace(/LIST\\s*-\\s*I(?!I)\\b/gi,'LIST-I').replace(/LIST\\s*-\\s*II\\b/gi,'LIST-II')
   .replace(/LIST\\s+I(?!I)\\b/gi,'LIST-I').replace(/LIST\\s+II\\b/gi,'LIST-II');
  const listIOcc=[...text.matchAll(/LIST-I/gi)],listIAt=listIOcc.length>1?listIOcc[1].index:(listIOcc[0]?.index??-1);
