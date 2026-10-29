@@ -1,11 +1,12 @@
-const CACHE_NAME = "pabace-static-v3";
+const CACHE_NAME = "pabace-static-v4";
 const APP_FILES = [
   "./",
   "./index.html",
   "./questions.js",
   "./learning.js",
   "./manifest.json",
-  "./icon.svg"
+  "./icon.svg",
+  "./logo.svg"
 ];
 
 self.addEventListener("install", event => {
