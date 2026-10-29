@@ -1,4 +1,4 @@
-const CACHE_NAME = "pabace-static-v6";
+const CACHE_NAME = "pabace-static-v7";
 const APP_FILES = [
   "./",
   "./index.html",
