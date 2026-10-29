@@ -502,17 +502,17 @@ function escapeHTML(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&am
 function parseListItems(text,pattern){const hits=[...text.matchAll(pattern)];return hits.map((m,i)=>({key:m[1],text:text.slice(m.index+m[0].length,i+1<hits.length?hits[i+1].index:text.length).trim().replace(/[;,\s]+$/,'')})).filter(x=>x.text)}
 function renderQuestion(raw){
  const el=$('question');
- const text=String(raw).replace(/<PARSED TEXT (?:OF|FOR) PAGE:\s*\d+\s*\/\s*\d+>/gi,' ').replace(/\\s+/g,' ').trim()
-  .replace(/LIST\\s*-\\s*I(?!I)\\b/gi,'LIST-I').replace(/LIST\\s*-\\s*II\\b/gi,'LIST-II')
-  .replace(/LIST\\s+I(?!I)\\b/gi,'LIST-I').replace(/LIST\\s+II\\b/gi,'LIST-II');
+ const text=String(raw).replace(/<PARSED TEXT (?:OF|FOR) PAGE:\s*\d+\s*\/\s*\d+>/gi,' ').replace(/\s+/g,' ').trim()
+  .replace(/LIST\s*-\s*I(?!I)\b/gi,'LIST-I').replace(/LIST\s*-\s*II\b/gi,'LIST-II')
+  .replace(/LIST\s+I(?!I)\b/gi,'LIST-I').replace(/LIST\s+II\b/gi,'LIST-II');
  const listIOcc=[...text.matchAll(/LIST-I/gi)],listIAt=listIOcc.length>1?listIOcc[1].index:(listIOcc[0]?.index??-1);
  const listIIOcc=[...text.matchAll(/LIST-II/gi)],listIIAt=listIIOcc.length>1?listIIOcc[1].index:(listIIOcc[0]?.index??-1);
  if(listIAt>=0&&listIIAt>listIAt){
   const intro=text.slice(0,listIOcc.length>1?listIOcc[1].index:listIAt).trim().replace(/[：:]$/,'');
-  const leftRaw=text.slice(listIAt+'LIST-I'.length,listIIAt).replace(/^\\s*\\([^)]*\\)\\s*/,'').trim();
-  const rightRaw=text.slice(listIIAt+'LIST-II'.length).replace(/^\\s*\\([^)]*\\)\\s*/,'').trim();
-  const left=parseListItems(leftRaw,/(?:^|\\s)([A-E])\\.\\s+/g);
-  const right=parseListItems(rightRaw,/(?:^|\\s)(I{1,3}|IV|V|VI{0,3}|IX|X)\\.\\s+/g);
+  const leftRaw=text.slice(listIAt+'LIST-I'.length,listIIAt).replace(/^\s*\([^)]*\)\s*/,'').trim();
+  const rightRaw=text.slice(listIIAt+'LIST-II'.length).replace(/^\s*\([^)]*\)\s*/,'').trim();
+  const left=parseListItems(leftRaw,/(?:^|\s)([A-E])\.\s+/g);
+  const right=parseListItems(rightRaw,/(?:^|\s)(I{1,3}|IV|V|VI{0,3}|IX|X)\.\s+/g);
   if(left.length>=2&&right.length>=2){
    el.classList.add('match-question');
    el.innerHTML='<div class="match-intro">'+escapeHTML(intro||'Match the following items.')+'</div><div class="match-grid"><section class="match-column"><h3 class="match-heading">LIST I</h3><ul class="match-list">'+left.map(x=>'<li><span class="match-key">'+escapeHTML(x.key)+'.</span><span>'+escapeHTML(x.text)+'</span></li>').join('')+'</ul></section><section class="match-column"><h3 class="match-heading">LIST II</h3><ul class="match-list">'+right.map(x=>'<li><span class="match-key">'+escapeHTML(x.key)+'.</span><span>'+escapeHTML(x.text)+'</span></li>').join('')+'</ul></section></div>';
@@ -520,7 +520,7 @@ function renderQuestion(raw){
   }
  }
  el.classList.remove('match-question');
- const statementPattern=/(?:^|\\s)([A-E])\\.\\s+/g,labels=[...text.matchAll(statementPattern)];
+ const statementPattern=/(?:^|\s)([A-E])\.\s+/g,labels=[...text.matchAll(statementPattern)];
  if(labels.length>=2){let out='',last=0;labels.forEach((m,i)=>{out+=escapeHTML(text.slice(last,m.index));out+='<br><span class="statement-key">'+escapeHTML(m[1])+'.</span> ';last=m.index+m[0].length;const next=labels[i+1];out+=escapeHTML(text.slice(last,next?next.index:text.length));last=next?next.index:text.length});el.innerHTML='<div>'+out+'</div>';return}
  el.textContent=text;
 }
