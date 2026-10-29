@@ -1,9 +1,10 @@
-const CACHE_NAME = "pabace-static-v4";
+const CACHE_NAME = "pabace-static-v5";
 const APP_FILES = [
   "./",
   "./index.html",
   "./questions.js",
   "./learning.js",
+  "./pyq-dec2025.js",
   "./manifest.json",
   "./icon.svg",
   "./logo.svg"
